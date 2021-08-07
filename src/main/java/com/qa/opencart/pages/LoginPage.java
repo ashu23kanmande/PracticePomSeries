@@ -37,7 +37,8 @@ public class LoginPage {
 	}
 	
 	public AccountPage doLogin(String un, String pwd) {
-		System.out.println("login with" + un + "" + pwd );		
+		System.out.println("login with" + un + "" + pwd );	
+		LOGGER.info("login with " + un + ""+ pwd);
 		elementUtil.doSendKeys(userName, un);
 		elementUtil.doSendKeys(password, pwd);
 		elementUtil.doClick(loginButton);
@@ -47,6 +48,7 @@ public class LoginPage {
 	
 	public RegisterPage navigatetoRigisterPage() {
 		System.out.println("navigate to register page");
+		LOGGER.info("navigate to register page");
 		elementUtil.doClick(registerLink);
 		 return new RegisterPage(driver);
 	}
